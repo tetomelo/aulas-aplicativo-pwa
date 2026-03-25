@@ -4,6 +4,7 @@ import Cabecalho from "./componentes/Cabecalho/Cabecalho";
 import Rodape from "./componentes/Rodape/Rodape";
 import PaginaInicial from "./paginas/PaginaInicial/PaginaInicial";
 import ListaProdutos from "./paginas/ListaProdutos/ListaProdutos";
+import ListaTarefas from "./paginas/LIstaTarefas/ListaTarefas";
 
 const router = createBrowserRouter([
  {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
  {
         path: 'lista-produtos',
         element: <ListaProdutos />,
+},
+  {
+        path: 'lista-tarefas',
+        element: <ListaTarefas />,
 },
 ]);
 

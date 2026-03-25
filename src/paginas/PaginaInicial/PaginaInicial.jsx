@@ -14,7 +14,11 @@ function PaginaInicial() {
             Lista de Produtos
             </BotaoCustomizado>
 
-         <BotaoCustomizado tipo="segundario" aoClicar={() => navigate("/cadastro-produto")}>
+            <BotaoCustomizado tipo="secundario" aoClicar={() => navigate("/lista-tarefas")}>
+                Lista de Tarefas
+            </BotaoCustomizado>
+
+         <BotaoCustomizado aoClicar={() => navigate("/cadastro-produto")}>
             Rota Invalida
             </BotaoCustomizado>
      </Principal>
