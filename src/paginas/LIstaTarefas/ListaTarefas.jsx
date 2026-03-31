@@ -1,15 +1,45 @@
 import { useState } from "react";
+import BotaoCustomizado from "../../componentes/BotaoCustomizado/BotaoCustomizado";
+import CampoCustomizado from "../../componentes/CampoCustomizado/CampoCustomizado";
 import Principal from "../../componentes/Principal/Principal";
 
-function ListaTarefas() {
-    const [novaTarefa, setNovaTarefa] = useState("");
-    return (
-        <Principal>
-            <h2>Lista de Tarefas</h2>
+function ListaTarefas({ }) {
+  const [novaTarefa, setNovaTarefa] = useState("");
 
-            <input type="text" placeholder="Nova Tarefa" value={novaTarefa} onChange={(event) => {}} />
-        </Principal>    
-    );
+  const [tarefas, setTarefas] = useState([]);
+
+  const adicionarTarefa = () => {
+    if (novaTarefa.trim() === "") {
+      alert("Digite uma tarefa para adicionar!");
+      return;
+    }
+    console.log(novaTarefa);
+
+    setTarefas([novaTarefa, ...tarefas]);
+};
+
+  return (
+    <Principal>
+          <h2>Lista de Tarefas</h2>
+
+
+      <CampoCustomizado
+        label="Nova Tarefa"
+        //propriedades não mapeadas
+        id="nova-tarefa"
+        type="text"
+        placeholder="Precione Enter para adicionar"
+        value={novaTarefa}
+        onChange={(event) => setNovaTarefa(event.target.value)}
+      />
+
+
+      <BotaoCustomizado tipo="secundario" aoClicar={adicionarTarefa}>+</BotaoCustomizado>
+
+
+      {JSON.stringify(tarefas, null, 2)}
+    </Principal>
+  );
 }
 
 export default ListaTarefas;
