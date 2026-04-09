@@ -2,9 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import "./App.css";
 import Cabecalho from "./componentes/Cabecalho/Cabecalho";
 import Rodape from "./componentes/Rodape/Rodape";
-import PaginaInicial from "./paginas/PaginaInicial/PaginaInicial";
+import CadastroCliente from "./paginas/CadastroCliente/CadastroCliente";
 import ListaProdutos from "./paginas/ListaProdutos/ListaProdutos";
 import ListaTarefas from "./paginas/LIstaTarefas/ListaTarefas";
+import PaginaInicial from "./paginas/PaginaInicial/PaginaInicial";
 
 const router = createBrowserRouter([
  {
@@ -19,6 +20,16 @@ const router = createBrowserRouter([
         path: 'lista-tarefas',
         element: <ListaTarefas />,
 },
+
+{
+    path: "cadastro-cliente",
+    element: <CadastroCliente />,
+},
+
+{
+  path: "*",
+  element: <h1>Página Não Encontrada</h1>,
+}
 ]);
 
 

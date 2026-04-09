@@ -21,8 +21,7 @@ function ListaProdutos() {
  },
 ];
  return (
-    <Principal>
-      <h2>Lista de Produtos</h2>
+     <Principal voltarPara="/" titulo="Lista de Produtos">
 
       {produtos.map((itemProduto, index) => {
         return <ItemProdutos key={index} produto={itemProduto} />

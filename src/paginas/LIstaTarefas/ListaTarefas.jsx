@@ -33,15 +33,7 @@ function ListaTarefas() {
 
 
   return (
-    <Principal>
-      <h2>Lista de Tarefas({tarefas.length})</h2>
-
-      <div className="lista-tarefas__campo-adicionar">
-        <BotaoCustomizado
-          label="Nova Tarefa"
-        />
-
-
+    <Principal voltarPara="/" titulo={`Lista de Tarefas (${tarefas.length})`}>
 
         <CampoCustomizado
           label="Nova Tarefa"
@@ -61,7 +53,7 @@ function ListaTarefas() {
         {/* <BotaoCustomizado tipo="secundario" aoClicar={adicionarTarefa}>
           +
         </BotaoCustomizado> */}
-      </div>
+      
 
       {!tarefas.length && (<span className="lista-tarefas__mensagem-sem-tarefas">Não há tarefas para mostrar.</span>)}
 
