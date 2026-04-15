@@ -6,6 +6,9 @@ import CadastroCliente from "./paginas/CadastroCliente/CadastroCliente";
 import ListaProdutos from "./paginas/ListaProdutos/ListaProdutos";
 import ListaTarefas from "./paginas/LIstaTarefas/ListaTarefas";
 import PaginaInicial from "./paginas/PaginaInicial/PaginaInicial";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import ListaClientes from "./paginas/ListaClientes/ListaCliente";
 
 const router = createBrowserRouter([
  {
@@ -19,6 +22,11 @@ const router = createBrowserRouter([
   {
         path: 'lista-tarefas',
         element: <ListaTarefas />,
+},
+
+{
+  path: 'lista-clientes',
+  element: <ListaClientes />,
 },
 
 {
@@ -41,6 +49,7 @@ function App() {
       <Cabecalho />
       <RouterProvider router={router} />
       <Rodape /> 
+      <ToastContainer />
     </>
   );
 }
